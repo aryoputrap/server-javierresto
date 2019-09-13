@@ -22,22 +22,22 @@ exports.show = (req, res) => {
         .catch(err => res.status(400).send(err))
 }
 
-// exports.store = (req, res) => {
-//     User.create(req.body).then(data=> {
-//         res.send({
-//             message: "success",
-//             data
-//         })
-//     })
-// }
-
 exports.store = (req, res) => {
-    const data = req.body
-    console.log(data)
-    menu.create(data)
-        .then(menu => res.status(201).send(menu))
-        .catch(err => res.status(400).send(err))
+    User.create(req.body).then(data=> {
+        res.send({
+            message: "success",
+            data
+        })
+    })
 }
+
+// exports.store = (req, res) => {
+//     const data = req.body
+//     console.log(data)
+//     menu.create(data)
+//         .then(menu => res.status(201).send(menu))
+//         .catch(err => res.status(400).send(err))
+// }
 
 exports.delete = (req, res) => {
     const id = req.params.id

@@ -15,10 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     // })
     menus.belongsTo(models.categories)
     menus.hasMany(models.orders)
-
-    // menus.hasMany(models.orders, {
-    //   foreignKey: 'menuId'
-    // })
+    menus.hasMany(models.orders, {
+      foreignKey: 'menuId'
+    })
 
   };
   return menus;

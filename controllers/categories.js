@@ -38,18 +38,18 @@ exports.store = (req, res) => {
         .catch(err => res.status(400).send(err))
 }
 
-exports.menulist = (req, res) => {
-    menu.findAll({
-        where: { categoryId: req.params.id }
-        // include: [{
-        //     model: categories,
-        //     as: 'menulist',
-        //     where : {id : req.params.id}
-        // }]
-    })
-        .then(menus => res.status(200).send(menus))
-        .catch(err => res.status(400).send(err))
-}
+// exports.menulist = (req, res) => {
+//     menu.findAll({
+//         where: { categoryId: req.params.id }
+//         // include: [{
+//         //     model: categories,
+//         //     as: 'menulist',
+//         //     where : {id : req.params.id}
+//         // }]
+//     })
+//         .then(menus => res.status(200).send(menus))
+//         .catch(err => res.status(400).send(err))
+// }
 
 exports.menulistall = (req, res) => {
     categories.findOne({

@@ -24,7 +24,7 @@ exports.show = (req, res) => {
 exports.store = (req, res) => {
     const data = req.body
     console.log(data)
-    order.create(data)
+    order.bulkCreate(data)
         .then(order => res.status(201).send(order))
         .catch(err => res.status(400).send(err))
 }
